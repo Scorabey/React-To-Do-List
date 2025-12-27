@@ -1,12 +1,12 @@
 import Field from "../field/Field"
-import AddButton from "../buttons/add/button"
+import Button from "../buttons/add/button"
 
 export default function AddTaskForm() {
     return (
         <>
         <form className="todo__form">
-            <Field />
-            <AddButton />
+            <Field className="todo__field" label="New task title" id="new-task" />
+            <Button type="submit">Add</Button>
         </form>
         </>
     )
