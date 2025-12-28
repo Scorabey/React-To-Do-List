@@ -8,15 +8,42 @@ export default function ToDo() {
         {id: 'task-1', title: 'Task 1', isDone: false},
         {id: 'task-2', title: 'Task 2', isDone: true}
     ]
+    const deleteAllTasks = () => {
+        console.log('delete')
+    }
+    const deleteTask = (taskId) => {
+        console.log("Delete: "+ taskId)
+    }
+    const toggleTaskComplete = (taskId, isDone) => {
+        console.log(`Task ${taskId} ${isDone ? 'Succes' : 'Decline'}`)
+    }
+    const filterTask = (query) => {
+        console.log(`Search: ${query}`)
+    }
+    const addTask = () => {
+        console.log(`Task added!`)
+    }
 
     return (
         <>
         <div className="todo">
             <h1 className="todo__title">To Do List</h1>
-            <AddTaskForm />
-            <SearchTaskForm />
-            <ToDoInfo total={tasks.length} done={tasks.filter(({isDone}) => isDone).length} />
-            <ToDoList tasks={tasks} />
+            <AddTaskForm
+            addTask={addTask}
+            />
+            <SearchTaskForm
+            onSearchInput={filterTask}
+            />
+            <ToDoInfo 
+            total={tasks.length} 
+            done={tasks.filter(({isDone}) => isDone).length}
+            onDeleteAllButtonClick={deleteAllTasks}
+            />
+            <ToDoList 
+            tasks={tasks}
+            onDeleteAllButtonClick={deleteTask}
+            onTaskcompleteChange={toggleTaskComplete}
+            />
         </div>
         </>
     )
