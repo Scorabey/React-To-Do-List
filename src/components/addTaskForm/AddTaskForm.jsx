@@ -4,6 +4,8 @@ import Button from "../buttons/add/button"
 export default function AddTaskForm(props) {
     const {
         addTask,
+        newTaskTitle,
+        setNewTaskTitle,
     } = props
 
     const onSubmit = (event) => {
@@ -14,7 +16,13 @@ export default function AddTaskForm(props) {
     return (
         <>
         <form className="todo__form" onSubmit={onSubmit}>
-            <Field className="todo__field" label="New task title" id="new-task" />
+            <Field 
+            className="todo__field" 
+            label="New task title" 
+            id="new-task" 
+            value={newTaskTitle}
+            onInput={(event) => setNewTaskTitle(event.target.value)}
+            />
             <Button type="submit">Add</Button>
         </form>
         </>

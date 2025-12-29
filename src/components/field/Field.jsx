@@ -5,6 +5,7 @@ export default function Field(props) {
       id,
       label,
       type = 'text',
+      value,
       onInput,
     } = props
 
@@ -23,6 +24,7 @@ export default function Field(props) {
             placeholder=" "
             autoComplete="off"
             type={type}
+            value={value}
             onInput={onInput}
           />
         </div>
