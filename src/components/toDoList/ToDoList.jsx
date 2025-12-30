@@ -2,21 +2,27 @@ import ToDoItem from "../toDoItem/ToDoItem"
 
 export default function ToDoList(props) {
     const {
-        tasks,
+        tasks=[],
+        filteredTasks,
         onDeleteAllButtonClick,
         onTaskcompleteChange,
     } = props
 
-    const hasTask = true
+    const hasTask = tasks.length > 0
+    const isemptyFilteredTasks = filteredTasks?.length === 0
 
     if(!hasTask) {
-        return <div className="todo__empty-message"></div>
+        return <div className="todo__empty-message">There are no tasks yet</div>
+    }
+
+    if(hasTask && isemptyFilteredTasks) {
+        return <div className="todo__empty-message">Tasks not found</div>
     }
 
     return (
         <>
         <ul className="todo__list">
-            {tasks.map((task) => (
+            {(filteredTasks ?? tasks).map((task) => (
                 <ToDoItem 
                     className="todo__item"
                     key={task.id}
