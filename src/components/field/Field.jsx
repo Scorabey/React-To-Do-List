@@ -7,6 +7,7 @@ export default function Field(props) {
       type = 'text',
       value,
       onInput,
+      ref,
     } = props
 
     return (
@@ -26,6 +27,7 @@ export default function Field(props) {
             type={type}
             value={value}
             onInput={onInput}
+            ref={ref}
           />
         </div>
         </>

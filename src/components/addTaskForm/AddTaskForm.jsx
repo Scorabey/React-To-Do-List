@@ -6,6 +6,7 @@ export default function AddTaskForm(props) {
         addTask,
         newTaskTitle,
         setNewTaskTitle,
+        newTaskInputRef,
     } = props
 
     const onSubmit = (event) => {
@@ -22,6 +23,7 @@ export default function AddTaskForm(props) {
             id="new-task" 
             value={newTaskTitle}
             onInput={(event) => setNewTaskTitle(event.target.value)}
+            ref={newTaskInputRef}
             />
             <Button type="submit">Add</Button>
         </form>

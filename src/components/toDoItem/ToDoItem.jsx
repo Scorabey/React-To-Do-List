@@ -6,11 +6,12 @@ export default function ToDoItem(props) {
       isDone,
       onDeleteAllButtonClick,
       onTaskcompleteChange,
+      ref,
     } = props
 
     return (
         <>
-        <li className={`todo-item ${className}`}>
+        <li className={`todo-item ${className}`} ref={ref}>
           <input
             className="todo-item__checkbox"
             id={id}
