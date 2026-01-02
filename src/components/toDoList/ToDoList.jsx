@@ -1,6 +1,7 @@
 import ToDoItem from "../toDoItem/ToDoItem"
+import { memo } from "react"
 
-export default function ToDoList(props) {
+function ToDoList(props) {
     const {
         tasks=[],
         filteredTasks,
@@ -38,3 +39,5 @@ export default function ToDoList(props) {
         </>
     )
 }
+
+export default memo(ToDoList)

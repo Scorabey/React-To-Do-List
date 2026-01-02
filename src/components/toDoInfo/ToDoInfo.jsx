@@ -1,4 +1,6 @@
-export default function ToDoInfo(props) {
+import { memo } from "react"
+
+function ToDoInfo(props) {
     const {
         total,
         done,
@@ -22,3 +24,5 @@ export default function ToDoInfo(props) {
         </>
     )
 }
+
+export default memo(ToDoInfo)
