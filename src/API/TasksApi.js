@@ -6,7 +6,8 @@ const headers = {
 
 const tasksAPI = {
     getAll: (setTasks) => {
-        return fetch(URL).then((response) => response.json()).then(setTasks)},
+        return fetch(URL).then((response) => response.json()).then(setTasks)
+    },
 
     add: (task) => {
         return fetch(URL, {
@@ -33,6 +34,11 @@ const tasksAPI = {
             headers,
             body: JSON.stringify({ isDone })
         })
+    },
+
+    getById: (id) => {
+        return fetch(`${URL}/${id}`)
+            .then((response) => response.json())
     },
 
 }
