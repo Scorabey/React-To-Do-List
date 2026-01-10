@@ -3,7 +3,9 @@ import Button from "../buttons/add/button"
 import { useContext, useState } from "react"
 import { TasksContext } from "../../context/tasksContext"
 
-export default function AddTaskForm() {
+export default function AddTaskForm(props) {
+    const { styles } = props
+
     const {
         addTask,
         newTaskTitle,
@@ -35,9 +37,9 @@ export default function AddTaskForm() {
 
     return (
         <>
-        <form className="todo__form" onSubmit={onSubmit}>
+        <form className={styles.form} onSubmit={onSubmit}>
             <Field 
-            className="todo__field" 
+            className={styles.field} 
             label="New task title" 
             id="new-task" 
             error={error}

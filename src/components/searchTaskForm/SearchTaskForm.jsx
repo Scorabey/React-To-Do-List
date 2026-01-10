@@ -2,7 +2,9 @@ import { useContext } from "react"
 import Field from "../field/Field"
 import { TasksContext } from "../../context/tasksContext"
 
-export default function SearchTaskForm() {
+export default function SearchTaskForm(props) {
+    const { styles } = props
+
     const {
         searchQuery,
         setSearchQuery,
@@ -11,11 +13,11 @@ export default function SearchTaskForm() {
     return (
         <>
         <form 
-        className="todo__form"
+        className={styles.form}
         onSubmit={(event) => event.preventDefault()}
         >
             <Field 
-            className="todo__field" 
+            className={styles.field}
             label="Search task" 
             id="search-task" 
             type="search" 

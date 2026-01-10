@@ -1,3 +1,5 @@
+import styles from './Button.module.scss'
+
 export default function Button(props) {
 
     const {
@@ -11,7 +13,7 @@ export default function Button(props) {
     return (
         <>
         <button 
-        className={`button ${className}`} 
+        className={`button ${styles.button} ${className}`} 
         type={type}
         onClick={onClick}
         disabled={isDisabled}

@@ -1,4 +1,4 @@
-import ToDo from "./components/ToDo"
+import ToDo from "./components/ToDo/ToDo"
 import { TasksProvider } from "./context/tasksContext"
 import Router from "./Router"
 import TasksPage from './pages/TasksPage'
